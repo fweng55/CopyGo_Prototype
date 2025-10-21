@@ -426,20 +426,13 @@ P.S. 所有產品均享 2 年保固，30 天無條件退換貨保證。`,
                   <div className="space-y-4">
                     {getFilteredCopies().map((copy) => (
                       <div key={copy.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                        <div className="flex items-center justify-between mb-3">
-                          <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                            copy.type === 'EDM' ? 'bg-purple-100 text-purple-700' :
-                            copy.type === 'Messaging' ? 'bg-green-100 text-green-700' :
-                            'bg-pink-100 text-pink-700'
-                          }`}>
-                            {copy.type}
-                          </span>
+                        <div className="flex items-center justify-end mb-3">
                           <span className="text-xs text-gray-500">
                             {copy.createdAt.toLocaleTimeString()}
                           </span>
                         </div>
                         <h3 className="font-semibold text-gray-900 mb-2">{copy.title}</h3>
-                        <div 
+                        <div
                           className="text-gray-700 text-sm leading-relaxed whitespace-pre-line"
                           dangerouslySetInnerHTML={{ __html: formatContentWithCTA(copy.content) }}
                         />
